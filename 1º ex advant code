@@ -1,0 +1,32 @@
+   static void Main(string[] args)
+        {
+            List<string> le = new List<string>();
+            int maior = 0;
+            int aux = 0;
+            int menor = 0;
+            using (StreamReader reader = File.OpenText("file.txt"))
+            {
+                string line = reader.ReadToEnd();
+                le = line.Split('\n').ToList();
+            }
+
+            foreach (var item in le)
+            {
+                if (item.Equals("\r"))
+                {
+                    if(maior > aux)
+                    {
+                        
+                    }
+                    else
+                    {
+                        maior = aux;
+                    }
+                    
+                    aux = 0;
+                    continue;
+                }
+                aux += Convert.ToInt32(item);
+                
+            }
+        }
